@@ -2,7 +2,7 @@
 
 ## Install
 
-* npm Install
+* npm install
 
 ## Run
 
