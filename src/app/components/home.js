@@ -14,6 +14,49 @@ export class Home extends React.Component {
                 status: 1
             })
         }, 3000);
+        console.log("Constructor");
+    }
+
+    // Immediatly before initial rendering
+    componentWillMount() {
+        console.log("componentWillMount");
+    }
+
+    // Immediatly after initial rendering
+    componentDidMount() {
+        console.log("componentDidMount");
+    }
+
+    // When component receive new props
+    componentWillReceiveProps(nextProps) {
+        console.log("componentWillReceiveProps", nextProps);
+    }
+
+    // Before rendering, after receiving new props or state (return false to prevent rendering !)
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log("shouldComponentUpdate -> nextProps", nextProps);
+        console.log("shouldComponentUpdate -> nextState", nextState);
+        // if (nextState.status == 1) {
+        //     return false;
+        // }
+        return true;
+    }
+
+    // Before rendering, after receiving new props or state
+    componentWillUpdate(nextProps, nextState) {
+        console.log("componentWillUpdate -> nextProps", nextProps);
+        console.log("componentWillUpdate -> nextState", nextState);
+    }
+
+    // After component's updates are flushed to DOM
+    componentDidUpdate(prevProps, prevState) {
+        console.log("componentDidUpdate -> prevProps", prevProps);
+        console.log("componentDidUpdate -> prevState", prevState);
+    }
+
+    // Immediatly before removing component from DOM
+    componentWillUnmount() {
+        console.log("componentWillUnmount");
     }
 
     onMakeOlder() {
